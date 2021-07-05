@@ -32,6 +32,7 @@ export default {
           "PropTypes",
           "createElement",
         ],
+        "node_modules/react-is/index.js": ["Memo", "isFragment", "ForwardRef"],
         "node_modules/react-dom/index.js": ["render"],
       },
     }),
