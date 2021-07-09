@@ -1,5 +1,5 @@
 import React from "react";
-export interface ButtonProps {
+interface ButtonProps {
     buttonText: string;
 }
 declare const CommonButton: React.FC<ButtonProps>;
