@@ -3,9 +3,21 @@ import commonjs from "rollup-plugin-commonjs";
 import external from "rollup-plugin-peer-deps-external";
 import resolve from "rollup-plugin-node-resolve";
 import pkg from "./package.json";
+import image from "rollup-plugin-img";
 
 export default {
   input: "src/index.ts",
+  external: [
+    "react",
+    "react-is",
+    "react-dom",
+    "prop-types",
+    "react-redux",
+    "react-router",
+    "react-router-dom",
+    "@material-ui/core",
+    "@material-ui/icons",
+  ],
   output: [
     {
       name: "tdw-components",
@@ -16,11 +28,15 @@ export default {
     },
   ],
   plugins: [
-    external(),
+    image({
+      extensions: /\.(png|jpg|jpeg|gif|svg)$/,
+      limit: 10000,
+    }),
+    external({ includeDependencies: true }),
     resolve(),
     typescript({
       rollupCommonJSResolveHack: true,
-      exclude: "**/__tests__/**",
+      exclude: "*/_tests_/*",
       clean: true,
     }),
     commonjs({
@@ -31,9 +47,15 @@ export default {
           "Component",
           "PropTypes",
           "createElement",
+          ["isValidElementType"],
         ],
-        "node_modules/react-is/index.js": ["Memo", "isFragment", "ForwardRef"],
         "node_modules/react-dom/index.js": ["render"],
+        "node_modules/react-is/index.js": [
+          "ForwardRef",
+          "Memo",
+          "isFragment",
+          "isValidElementType",
+        ],
       },
     }),
   ],

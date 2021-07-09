@@ -5,8 +5,8 @@ export interface ButtonProps {
   buttonText: string;
 }
 
-const CommonButton: React.FC<ButtonProps> = ({ buttonText }) => {
+const CustomButton: React.FC<ButtonProps> = ({ buttonText }) => {
   return <Button>{buttonText}</Button>;
 };
 
-export default CommonButton;
+export default CustomButton;

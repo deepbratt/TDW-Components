@@ -1,3 +1,4 @@
-import CommonButton from "./components/Button";
+import CustomButton from "./components/Button";
+import Footer from "./components/footer";
 
-export { CommonButton };
+export { CustomButton, Footer };
