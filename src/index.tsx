@@ -1,3 +1,3 @@
-import CommonButton from "./components/Button/index";
+import CustomButton from "./components/CustomButton";
 
-export { CommonButton };
+export { CustomButton };
