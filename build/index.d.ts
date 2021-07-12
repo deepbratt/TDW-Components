@@ -1,2 +1,3 @@
 import CustomButton from "./components/CustomButton";
-export { CustomButton };
+import CustomTitle from "./components/CustomTitle/CustomTitle";
+export { CustomButton, CustomTitle };
