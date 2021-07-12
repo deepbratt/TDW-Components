@@ -2,8 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const LayoutStyle = makeStyles((theme) => ({
   root: {
-    // REMOVED - SECTION PADDING
-    padding: "60px 0",
+    padding: "50px 0",
     position: "relative",
   },
   content: {
