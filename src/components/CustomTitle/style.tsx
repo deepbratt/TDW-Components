@@ -1,5 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
+import {Colors} from "../color.constants"
 
+const {red,grey} = Colors
 const LayoutStyle = makeStyles((theme) => ({
   root: {
     padding: "50px 0",
@@ -20,11 +22,16 @@ const LayoutStyle = makeStyles((theme) => ({
     marginBottom: "40px",
   },
   subHeader: {
-    color: "grey",
+    color: grey,
   },
   underlinedStyles:{
-    borderBottom: "1px solid red"
-  }
+    borderBottom: `1px solid ${red}`
+  },
+  btn : {
+        textTransform: "none",
+        fontWeight: "bold",
+        padding: "7px 25px 7px 25px"
+}
 }));
 
 export default LayoutStyle;

@@ -1,6 +1,8 @@
 import * as React from "react";
-import { Button as MuiButton, ButtonProps } from "@material-ui/core";
+import { Button as MuiButton, ButtonProps , Typography} from "@material-ui/core";
 import Breakpoints from "../Utils/Breakpoints";
+import useStyles from "../components/CustomTitle/style"
+
 
 interface IButtonProps extends ButtonProps {
   fullWidth?: boolean;
@@ -11,7 +13,7 @@ interface IButtonProps extends ButtonProps {
   size?: "small" | "medium" | "large";
   handleClick?: () => void;
 }
-
+ 
 function CustomButton({
   fullWidth,
   variant,
@@ -23,18 +25,19 @@ function CustomButton({
   children,
   ...rest
 }: IButtonProps) {
+  const {btn} = useStyles()
   return (
     <MuiButton
       onClick={handleClick}
       size={size ? size : Breakpoints()}
-      className={styles}
-      style={{ borderRadius: radius }}
+      className={styles? styles : btn }
+      style={{ borderRadius: radius}}
       variant={variant}
       color={color}
       fullWidth={fullWidth}
       {...rest}
     >
-      {children}
+      <Typography variant="h6">{children}</Typography>
     </MuiButton>
   );
 }
