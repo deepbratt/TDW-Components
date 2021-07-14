@@ -1,62 +1,26 @@
-import typescript from "rollup-plugin-typescript2";
-import commonjs from "rollup-plugin-commonjs";
-import external from "rollup-plugin-peer-deps-external";
-import resolve from "rollup-plugin-node-resolve";
-import pkg from "./package.json";
-import image from "rollup-plugin-img";
+// import typescript from "rollup-plugin-typescript2";
+import image from "rollup-plugin-images";
+import postcss from "rollup-plugin-postcss";
+import { terser } from "rollup-plugin-terser";
+import babel from "rollup-plugin-babel";
+import svg from "rollup-plugin-svg";
 
-export default {
+const config = {
   input: "src/index.ts",
-  external: [
-    "react",
-    "react-is",
-    "react-dom",
-    "prop-types",
-    "react-redux",
-    "react-router",
-    "react-router-dom",
-    "@material-ui/core",
-    "@material-ui/icons",
-  ],
-  output: [
-    {
-      name: "tdw-components",
-      file: pkg.main,
-      format: "cjs",
-      exports: "named",
-      sourcemap: true,
-    },
-  ],
+  external: ["react"],
   plugins: [
-    image({
-      extensions: /\.(png|jpg|jpeg|gif|svg)$/,
-      limit: 10000,
-    }),
-    external({ includeDependencies: true }),
-    resolve(),
-    typescript({
-      rollupCommonJSResolveHack: true,
-      exclude: "*/_tests_/*",
-      clean: true,
-    }),
-    commonjs({
-      include: ["node_modules/**"],
-      namedExports: {
-        "node_modules/react/react.js": [
-          "Children",
-          "Component",
-          "PropTypes",
-          "createElement",
-          ["isValidElementType"],
-        ],
-        "node_modules/react-dom/index.js": ["render"],
-        "node_modules/react-is/index.js": [
-          "ForwardRef",
-          "Memo",
-          "isFragment",
-          "isValidElementType",
-        ],
-      },
-    }),
+    postcss(),
+    babel({ exclude: "node_modules/**" }),
+    image(),
+    terser(),
+    svg(),
+    
   ],
+  output: {
+    format: "umd",
+    name: "@TDW-Components",
+    globals: { react: "React" },
+  },
 };
+
+export default config;
