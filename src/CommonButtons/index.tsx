@@ -8,14 +8,12 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-interface CommonButtonProps {
+
+export interface CommonButtonProps {
   label?: string;
-  className: string;
+  className?: string;
 }
-const ContainedButtons: React.FC<CommonButtonProps> = ({
-  label,
-  className,
-}) => {
+const CommonButtons: React.FC<CommonButtonProps> = ({ label, className }) => {
   const classes = useStyles();
 
   return (
@@ -39,4 +37,4 @@ const ContainedButtons: React.FC<CommonButtonProps> = ({
   );
 };
 
-export default ContainedButtons;
+export default CommonButtons;

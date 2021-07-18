@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import ContainedButtons from "../CommonButtons/CommonButtons";
+import ContainedButtons from "./CommonButtons";
 
 const stories = storiesOf("App Test", module);
 
