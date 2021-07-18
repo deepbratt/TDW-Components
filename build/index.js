@@ -42,7 +42,7 @@ var TestComponent = function (_a) {
     var theme = _a.theme;
     return (React__default['default'].createElement("div", { "data-testid": "test-component", className: "test-component test-component-" + theme },
         React__default['default'].createElement("h1", { className: "heading" }, "I'm the test component"),
-        React__default['default'].createElement("h2", null, "Made with love by Harvey")));
+        React__default['default'].createElement("h2", null, "Made with love")));
 };
 
 exports.TestComponent = TestComponent;
