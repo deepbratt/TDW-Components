@@ -1,6 +1,6 @@
 {
-  "name": "react-storybook-componentmicro-magnit",
-  "version": "1.0.12",
+  "name": "tdw-components-npm",
+  "version": "1.0.15",
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
