@@ -1,4 +1,5 @@
-import TestComponent from "./TestComponent";
 import FilterAccordion from "./accordion";
+import InputField from "./InputField";
+import InputFieldWithButton from "./InputField/InputFieldWithButton";
 
-export { TestComponent, FilterAccordion };
+export { FilterAccordion, InputField, InputFieldWithButton };

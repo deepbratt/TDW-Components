@@ -6,7 +6,7 @@ import {
   AccordionDetails,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-// import AccordionStyles from "./styles";
+import AccordionStyles from "./styles";
 export interface FilterAccordionProps {
   title: string;
   children: React.ReactNode;
@@ -16,7 +16,7 @@ const FilterAccordion: React.FC<FilterAccordionProps> = ({
   title,
   children,
 }) => {
-  // const { root } = AccordionStyles();
+  const { root } = AccordionStyles();
   //   const [expanded, setExpanded] = useState<string | false>(false);
 
   //   const handleChange =
@@ -26,9 +26,9 @@ const FilterAccordion: React.FC<FilterAccordionProps> = ({
 
   return (
     <Accordion
-
-    //   expanded={expanded === "accordion-" + title}
-    //   onChange={() => handleChange("accordion-" + title)}
+      className={root}
+      //   expanded={expanded === "accordion-" + title}
+      //   onChange={() => handleChange("accordion-" + title)}
     >
       <AccordionSummary
         expandIcon={<ExpandMoreIcon />}
