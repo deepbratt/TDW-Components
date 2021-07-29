@@ -1,5 +1,5 @@
 {
-  "name": "tdw-components-npm",
+  "name": "tdw-components",
   "version": "1.0.18",
   "main": "build/index.js",
   "module": "build/index.esm.js",
@@ -7,7 +7,7 @@
     "build"
   ],
   "publishConfig": {
-    "registry": "https://themagnit.jfrog.io/artifactory/api/npm/tdw-components-npm/"
+    "registry": "https://themagnit.jfrog.io/artifactory/api/npm/tdw_components-npm/"
   },
   "types": "build/index.d.ts",
   "description": "A skeleton to create your own React component library using Rollup, TypeScript, Sass and Storybook",
