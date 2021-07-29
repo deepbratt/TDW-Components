@@ -4,8 +4,7 @@
   "main": "build/index.js",
   "module": "build/index.esm.js",
   "files": [
-    "build/",
-    "package.json"
+    "build"
   ],
   "publishConfig": {
     "registry": "https://themagnit.jfrog.io/artifactory/api/npm/tdw_components-npm/"
